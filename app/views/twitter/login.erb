@@ -1,0 +1,25 @@
+<% if @authorization_url %>
+    <script type="text/javascript">
+        function authorize(){
+            var popup = window.open("", "TwitterAuthorization", "width=1000,height=500,menubar=no,resizable=no,titlebar=no");
+            popup.location.href = "<%= @authorization_url %>";
+        }
+    </script>
+
+    <div class="app-container clearfix">
+      <div id="header">
+        <p id="login-panel" class="">Please <a href="#" class="login" onclick="authorize()">login</a> with your twitter account</p>
+      </div>
+    </div>
+<% elsif @error %>
+    <div class="app-container clearfix">
+      <div id="header">
+        <p id="login-panel" class=""><%= @error %></p>
+      </div>
+    </div>
+<% else %>
+    <script type="text/javascript">
+        window.opener.location.href = "http://localhost:3000";
+        window.close();
+    </script>
+<% end %>
