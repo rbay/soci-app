@@ -11,3 +11,19 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  include Capybara::Email::DSL
+
+  self.use_transactional_fixtures = false
+
+  setup do
+    Capybara.default_driver = :selenium
+  end
+
+  teardown do
+    DatabaseCleaner.clean
+    Capybara.use_default_driver
+  end
+end

@@ -25,6 +25,13 @@ gem 'twitter'
 gem 'oauth'
 gem 'twitter_oauth'
 
+group :test do
+  gem 'capybara', '~> 2.0.2'
+  gem 'capybara-email', '~> 2.0.2'
+  gem 'database_cleaner', '~> 0.9.1'
+  gem 'simplecov', '~> 0.7.1', :require => false
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

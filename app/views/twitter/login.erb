@@ -8,7 +8,7 @@
 
     <div class="app-container clearfix">
       <div id="header">
-        <p id="login-panel" class="">Please <a href="#" class="login" onclick="authorize()">login</a> with your twitter account</p>
+        <p id="login-panel" class="" style="text-align: center;">Please <a href="#" class="login" onclick="authorize()"><img src="https://dev.twitter.com/sites/default/files/images_documentation/sign-in-with-twitter-gray.png" alt="Sign in with Twitter" title="Sign in with Twitter"></a> with your twitter account</p>
       </div>
     </div>
 <% elsif @error %>
@@ -19,7 +19,7 @@
     </div>
 <% else %>
     <script type="text/javascript">
-        window.opener.location.href = "http://localhost:3000";
+        window.opener.location.href = "http://localhost:3000/twitter";
         window.close();
     </script>
 <% end %>

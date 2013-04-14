@@ -13,7 +13,11 @@ Twitter::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
      resources :twitter
      match 'login' => 'twitter#login'
+     match 'tweet' => 'twitter#tweet'
+     match 'search' => 'twitter#search'
+     match 'more_tweets' => 'twitter#more_tweets'
      match 'callback' => 'twitter#callback'
+     match 'timeline' => 'twitter#timeline'
 
 
   # Sample resource route with options:

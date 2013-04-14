@@ -3,12 +3,30 @@
 <head>
   <title>Twitter</title>
   <%= stylesheet_link_tag    "application", "bootstrap.min", :media => "all" %>
-  <%= javascript_include_tag "application", "bootstrap.min" %>
+  <%= javascript_include_tag "application", "bootstrap.min", "jquery.timeago" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="./index.html">soci stream</a>
+    <span class="search pull-right">
+      <form id="searchForm" action="#">
+        <fieldset class="search-result">
+          <div class="input-form-wrap">
+            <input type="text" id="search_str" name="q" class="srch-res" size="30" placeholder="Search"/>
+          </div>
+          <span id="search-response"></span>
+        </fieldset>
+      </form>
+    </span>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <%= yield %>
+</div>
 
 </body>
 </html>
