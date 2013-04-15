@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem "pg"
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -32,11 +34,7 @@ group :test do
   gem 'simplecov', '~> 0.7.1', :require => false
 end
 
-group :production do
-  # gems specifically for Heroku go here
-  gem "pg"
-  gem "activerecord-postgresql-adapter"
-end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
